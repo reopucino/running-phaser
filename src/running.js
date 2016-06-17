@@ -21,6 +21,7 @@ playgame.prototype = {
 
 	preload:function(){
 		game.load.spritesheet("player", "./assets/spritesheet_player.png", 23,23, 22);
+		game.load.image('bg', './assets/runningtrack.png')
 		//game.load.spritesheet("player2", "./assets/spritesheet_player.png", 23,23, 22);
 		game.scale.pageAlignHorizontally = true;
 		game.scale.oageAlignVertically = true;
@@ -29,8 +30,9 @@ playgame.prototype = {
 	
 	create:function(){
 		game.stage.backgroundColor = "#000000";
-		this.playerOne = game.add.sprite(30, 100, "player");
-		this.playerTwo = game.add.sprite(30, 50, "player");
+		game.add.tileSprite(0, 60, 600, 48, "bg");
+		this.playerOne = game.add.sprite(30, 50, "player");
+		this.playerTwo = game.add.sprite(30, 75, "player");
 		//this.playerOne.animations.add('run', [1,9,10]);
 		//this.playerOne.animations.add('idle', [0]);
 		//this.playerOne.animations.play('run', 20, true);
